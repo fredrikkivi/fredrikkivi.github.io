@@ -88,11 +88,54 @@
         <li><a href="https://www.instagram.com/fredrikkiviofficiell/" rel="noopener">Instagram</a></li>
         <li><a href="https://www.facebook.com/fredrikkiviofficiell" rel="noopener">Facebook</a></li>
       </ul>
+
+      <div id="mlb2-48578780" class="newsletter ml-subscribe-form ml-subscribe-form-48578780">
+        <h3 class="gigs__heading">Nyhetsbrev</h3>
+        <div class="row-form">
+          <p>Nya låtar, släpp och spelningar, direkt i din inkorg.</p>
+          <form class="ml-block-form newsletter__form" action="https://assets.mailerlite.com/jsonp/2797867/forms/204220207378466210/subscribe" data-code="" method="post" target="_blank">
+            <label class="newsletter__label" for="nl-email">E-postadress</label>
+            <div class="newsletter__row">
+              <input id="nl-email" type="email" name="fields[email]" placeholder="E-postadress" autocomplete="email" required>
+              <button class="button" type="submit">Prenumerera</button>
+            </div>
+            <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="hidden" name="anticsrf" value="true">
+          </form>
+          <p class="newsletter__note">Adressen används bara till nyhetsbrevet, via MailerLite. Du kan avsluta när du vill. Formuläret skyddas av Googles reCAPTCHA, som laddas först när du klickar i fältet.</p>
+        </div>
+        <div class="row-success" hidden>
+          <p><strong>Tack!</strong> Nu är du med på listan. Vi hörs! /Fredrik</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
     <p><a href="mailto:info@fredrikkivi.se">info@fredrikkivi.se</a></p>
   </footer>
+  <script>
+    // MailerLite och reCAPTCHA laddas först när någon vill prenumerera.
+    (function () {
+      var box = document.getElementById('mlb2-48578780');
+      if (!box) return;
+      var loaded = false;
+      function load() {
+        if (loaded) return; loaded = true;
+        ['https://www.google.com/recaptcha/api.js',
+         'https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519'
+        ].forEach(function (src) {
+          var s = document.createElement('script'); s.src = src; s.async = true; document.body.appendChild(s);
+        });
+      }
+      box.addEventListener('focusin', load);
+      box.addEventListener('pointerdown', load);
+      window.ml_webform_success_48578780 = function () {
+        box.querySelector('.row-form').hidden = true;
+        box.querySelector('.row-success').hidden = false;
+      };
+    })();
+  </script>
 </body>
 </html>
